@@ -124,4 +124,3 @@ Please give credit if you reuse or fork this — it inspires developers like me 
   <img src="https://img.icons8.com/color/48/rocket.png"/><br>
   <b>~Ishaan Ray (Cipher Shadow)</b><br>
 </p>
----
