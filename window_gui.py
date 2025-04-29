@@ -11,14 +11,14 @@ wd.title("Welcome to IR's Window GUI")
 wd.geometry("400x300")
 
 # Load original image once
-original_bg = Image.open("F:/Python/IMAGES/IR x ST.png")
+original_bg = Image.open("F:/Python/1. WINDOW GUI/IMAGES/IR x ST.png")
 
 # Create a Canvas instead of Label
 canvas = tk.Canvas(wd, highlightthickness=0)
 canvas.pack(fill="both", expand=True)
 
 # Load original image once
-original_bg = Image.open("F:/Python/IMAGES/IR x ST.png")
+original_bg = Image.open("F:/Python/1. WINDOW GUI/IMAGES/IR x ST.png")
 
 # Create a dummy image initially (will be replaced shortly)
 dummy_img = ImageTk.PhotoImage(Image.new("RGB", (1, 1)))
@@ -42,10 +42,10 @@ wd.after(100, resize_bg)
 
 # Load original images for buttons
 original_imgs = [
-    Image.open("F:/Python/IMAGES/Information icon.png"),
-    Image.open("F:/Python/IMAGES/About icon.png"),
-    Image.open("F:/Python/IMAGES/Contact icon.png"),
-    Image.open("F:/Python/IMAGES/Exit icon.png"),
+    Image.open("F:/Python/1. WINDOW GUI/IMAGES/Information icon.png"),
+    Image.open("F:/Python/1. WINDOW GUI/IMAGES/About icon.png"),
+    Image.open("F:/Python/1. WINDOW GUI/IMAGES/Contact icon.png"),
+    Image.open("F:/Python/1. WINDOW GUI/IMAGES/Exit icon.png"),
 ]
 
 # Make small 50x50 versions for starting
