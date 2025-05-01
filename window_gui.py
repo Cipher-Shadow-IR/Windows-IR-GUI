@@ -9,7 +9,7 @@ class DesktopApp:
         self.root.title("Welcome to IR's Window GUI")
         self.root.geometry("400x300")
 
-        self.original_bg = Image.open("F:/Python/1. WINDOW GUI/IMAGES/IR x ST.png")
+        self.original_bg = Image.open("IMAGES/IR x ST.png")
         self.canvas = tk.Canvas(self.root, highlightthickness=0)
         self.canvas.pack(fill="both", expand=True)
 
@@ -22,10 +22,10 @@ class DesktopApp:
 
         self.btns = ["Introduction", "About", "Contact", "Exit"]
         img_paths = [
-            "F:/Python/1. WINDOW GUI/IMAGES/Information icon.png",
-            "F:/Python/1. WINDOW GUI/IMAGES/About icon.png",
-            "F:/Python/1. WINDOW GUI/IMAGES/Contact icon.png",
-            "F:/Python/1. WINDOW GUI/IMAGES/Exit icon.png",
+            "IMAGES/Information icon.png",
+            "IMAGES/About icon.png",
+            "IMAGES/Contact icon.png",
+            "IMAGES/Exit icon.png",
         ]
 
         self.original_imgs = [Image.open(p) for p in img_paths]
