@@ -214,10 +214,36 @@ class DesktopApp:
             return
 
         img = ImageTk.PhotoImage(Image.open(path).resize((30, 30)))
-        btn = tk.Button(self.app_dock, image=img, command=window.lift, bg="gray15", relief="flat")
-        btn.image = img
+
+        def on_dock_click():
+            if window.state() == 'normal':
+                window.withdraw()
+            else:
+                window.deiconify()
+                window.lift()
+
+        btn = tk.Button(self.app_dock, image=img, bg="gray15", relief="flat", command=on_dock_click)
+        btn.image = img  # <-- Critical: keep reference!
         btn.pack(pady=5)
+
+        # Store both image and button
         self.dock_icons[name] = btn
+
+
+        def on_close():
+            if name in self.opened_apps:
+                self.opened_apps[name].destroy()
+                self.opened_apps.pop(name, None)
+                self.remove_from_dock(name)
+
+        def show_menu(event):
+            menu = tk.Menu(self.root, tearoff=0)
+            menu.add_command(label="Close", command=on_close)
+            menu.post(event.x_root, event.y_root)
+
+        btn.bind("<Button-3>", show_menu)
+
+
 
     def remove_from_dock(self, name):
         if name in self.dock_icons:
